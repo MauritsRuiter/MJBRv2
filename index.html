@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <video id="vid1" autoplay loop>
+      <source src="./assets/video/MCBackground.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <script>
+      function setVideoSize() {
+        var video = document.getElementById("vid1");
+        var windowHeight = window.innerHeight;
+        var windowWidth = window.innerWidth;
+
+        video.style.width = windowWidth + "px";
+        video.style.height = windowHeight + "px";
+      }
+
+      // Set initial size on page load
+      setVideoSize();
+
+      // Set size when window is resized
+      window.addEventListener("resize", setVideoSize);
+      document.getElementById("vid1").addEventListener(
+        "loadedmetadata",
+        function () {
+          this.currentTime = 165;
+        },
+        false
+      );
+    </script>
+    <div id="img-container">
+      <img id="img-minecraft" src="./assets/img/minecraft.png" alt="minecraft-logo" />
+      <img id="img-edition" src="./assets/img/edition.png" alt="edition" />
+    </div>
+    <div class="menu">
+      <div class="full-container">
+        <img class="btn-full-width" id="title-btn-1" src="./assets/img/button.png" alt="titlescreen button"><span>Singleplayer</span>
+        <img class="btn-full-width" id="title-btn-2" src="./assets/img/button.png" alt="titlescreen button"><span>Multiplayer</span>
+        <img class="btn-full-width" id="title-btn-3" src="./assets/img/button.png" alt="titlescreen button"><span>Minecraft Realms</span>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const normalImage1 = document.getElementById('title-btn-1');
+          const normalImage2 = document.getElementById('title-btn-2');
+          const normalImage3 = document.getElementById('title-btn-3');
+      
+          normalImage1.addEventListener('mouseenter', function () {
+              normalImage1.src = './assets/img/button_highlighted.png'; // Change the source to the hover image
+          });
+      
+          normalImage1.addEventListener('mouseleave', function () {
+              normalImage1.src = './assets/img/button.png'; // Change the source back to the normal image
+          });
+
+          normalImage2.addEventListener('mouseenter', function () {
+              normalImage2.src = './assets/img/button_highlighted.png'; // Change the source to the hover image
+          });
+      
+          normalImage2.addEventListener('mouseleave', function () {
+              normalImage2.src = './assets/img/button.png'; // Change the source back to the normal image
+          });
+
+          normalImage3.addEventListener('mouseenter', function () {
+              normalImage3.src = './assets/img/button_highlighted.png'; // Change the source to the hover image
+          });
+      
+          normalImage3.addEventListener('mouseleave', function () {
+              normalImage3.src = './assets/img/button.png'; // Change the source back to the normal image
+          });
+      });
+      </script>
+      <div class="half-container">
+        <button class="btn-half-width">Options</button>
+        <button class="btn-half-width">Quit Game</button>
+      </div>
+    </div>
+  </body>
+</html>

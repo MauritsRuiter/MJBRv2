@@ -1,0 +1,108 @@
+@font-face {
+  font-family: monocraft;
+  src: url("./assets/font/minecraft-font/MinecraftRegular-Bmg3.otf")
+    format("opentype"); /* Change the file path and font format as necessary */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monocraft, sans-serif; /* Use the font-family you specified in @font-face */
+}
+
+body {
+
+}
+
+video {
+  position: absolute;
+  z-index: -1;
+}
+
+#vid1 {
+  width: 100%;
+  height: 100vh; /* Set initial height to viewport height */
+  object-fit: cover; /* Ensure the video covers the entire container */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+@media (min-aspect-ratio: 16/9) {
+  /* Adjust video height if aspect ratio is wider than 16:9 */
+  #vid1 {
+      height: 100%; /* Reset height to 100% */
+      width: auto; /* Allow width to be flexible */
+  }
+}
+
+#img-container {
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#img-minecraft {
+  position: absolute;
+}
+
+#img-edition {
+  position: absolute;
+  top: 20px;
+}
+
+.menu {
+  max-width: 800px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.full-container {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.half-container {
+  margin-top: 1.5rem;
+  background-color: green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn-full-width {
+  width: auto;
+  height: 75px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  z-index: 0;
+}
+
+span {
+  color: #fff;
+  position: relative;
+}
+
+.btn-half-width {
+  width: 390px;
+  height: 75px;
+  border: 5px solid #000;
+  font-size: 2.25rem;
+  color: #fff;
+  background-color: gray;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
